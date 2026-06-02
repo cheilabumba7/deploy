@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cheila Bumba | Full-Stack Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e0e3e5",
+                    "surface-tint": "#7bd0ff",
+                    "outline": "#87929a",
+                    "on-tertiary-fixed": "#111c2d",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#004965",
+                    "surface-container": "#1d2022",
+                    "primary": "#8ed5ff",
+                    "surface-container-high": "#272a2c",
+                    "on-primary-fixed": "#001e2c",
+                    "surface-container-highest": "#323537",
+                    "primary-container": "#38bdf8",
+                    "inverse-primary": "#00668a",
+                    "tertiary-container": "#a7b2c9",
+                    "inverse-surface": "#e0e3e5",
+                    "background": "#101415",
+                    "surface-dim": "#101415",
+                    "on-error": "#690005",
+                    "inverse-on-surface": "#2d3133",
+                    "on-secondary-container": "#adb4ce",
+                    "on-secondary": "#283044",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-container-low": "#191c1e",
+                    "surface-container-lowest": "#0b0f10",
+                    "on-primary-fixed-variant": "#004c69",
+                    "on-secondary-fixed": "#131b2e",
+                    "error": "#ffb4ab",
+                    "error-container": "#93000a",
+                    "secondary-container": "#3f465c",
+                    "on-primary": "#00354a",
+                    "on-surface-variant": "#bdc8d1",
+                    "primary-fixed-dim": "#7bd0ff",
+                    "tertiary-fixed": "#d8e3fb",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "surface": "#101415",
+                    "secondary-fixed": "#dae2fd",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "outline-variant": "#3e484f",
+                    "on-tertiary": "#263143",
+                    "tertiary": "#c2cde5",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface-variant": "#323537",
+                    "secondary": "#bec6e0",
+                    "on-tertiary-container": "#394458",
+                    "surface-bright": "#363a3b",
+                    "primary-fixed": "#c4e7ff",
+                    "on-surface": "#e0e3e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Inter"],
+                    "label-sm": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "code-md": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "code-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #101415;
+            color: #e0e3e5;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .section-line {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.2) 0%, transparent 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .skill-badge {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(189, 200, 209, 0.1);
+        }
+        .primary-glow:hover {
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="sticky top-0 w-full bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-outline-variant/15 z-50 h-20 shadow-2xl">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full">
+<div class="font-headline-sm text-headline-sm font-bold text-primary flex items-center gap-3">
+<img alt="Cheila Bumba" class="w-8 h-8" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAFhklEQVR4AeyaQYscRRTHX/UMTkc8BBERVlGjiWi8uYZlE8S4C34AP4CIK3jIB/Ab+AHEgxgF8ebBu5hlNWbDGowXUQ+uUQkRIiJCQtKTzGzl/Wd3sjM9r2e6uqp6qpNq+k13v+6q96/fVvfrN7MJxcWKQARohY8oAowALQlYNo8zMAK0JGDZPM7ACNCSgGXzOAMjQEsCls3jDIwALQlYNr8fZ6AlsvHmjQGotX6M7RTbe2zPjw9jfkeNAMjAHmJEv7J9wPY+2wX2PcPbua+NAMiU3mI7yDZcAfSN4cE8t00BuChAui34anc1BeCLApnfBF/triYD/Ll2WkLA4AFysjjEuh9gG11vKaX+GHXMaz94gAzmKFt+/SnvmNdxEwC+IMAJ4vaFriYAlGbgLxAfgjUVYJyBBrNHeoW59wEuf6UfXTqTnV5azz5+aUM/YgDs7qX7GfiuCzulMrCL+Ag2y7zcwotnskP9dnaRFL3NAtba/e7mqxu6zfumq/T8m52Bv9CtnXZ3cz9+9uOxb28+bRq8zPXOAS6v6yfbSp9VpB4fClCKjtzoZ28Ojw22lTLwsYe7axzjWbbBqpR6IunRd9A2cDj8cAoQAnco2yRSC+RmkWZgxQysFqANGt1I2+3FGcCljZtPQSAJ8LSmSw+20s/IfJEAzkwg/YOdTxFzMpxa6FN2ziVEJwAHgnboHAnwiPSVluq89s1J1SPzpVIGvriobiMmYudD4tGCP/RAc/5khWNrgBACQVQAL6H0+PkV9RcZLjYZGKEQE7EliMRaoRnayXKxAggBEEIsiCYWfQUDwEAmTpVzSLfv7Aw80jdiQ4NPiJUBeoYHDJUyMBqOmm+IlQDWAA8MpBlYKQP7hGgMsCZ4RQBnZmA0lMwXRCOANcIDg0oZGA2LzAfE0gDrhGebgYsAwu8aYjmAqC2pu05SttX6755Wr0AYjS52+9LzzygDTwsPrdBMrH3yOn7Z1t2vy9bupQDu1ZbCD9n8qqLS5R9W00uTQqw8TjLwNAXQnLB26RVHKTpctnYvBbBIiCb1f6+dWfVR0Lc0Aytl4IL+B+5butvCGAYHuQ+GuJNziYelBt/n2pJb/842tiqio1ygnUUdPHbC/kACWDkDS3Lwldvut0Ykxdo+kKSfS+3yvlIAUVsm1FkhrmvzHSh8bcV1MJJM/pzFsfMMPKoFWgGPpGc6jzGhzmrZ2r0UQOIFD17fZRGH4ee69vo7MOC5LD9LA8TgaoIo3VJOMrBreGBiBBANaoDoJQP7gAcexgDRyDNEaQZaZWBf8MCiEkA09AhRAlg5A/uEBw6VAaKxJ4jOMrBveGBgBRAduITosgauAx7Gbw0QnQCio9pSun3NM3CNtfsYQMCoao5qSycZuM7a3RlAgMdMLH7ZxhUzTZqBVhl4PyJ/8VHxB679Pib3nAJE94BICZ3g59llHO/ZdsnfhSWAxhl4r3bf3ouN6uYyNA20DZ2Ots4BQtfWyQN/EqUvk6ZP+Ph00uscL1lbOsnAqN217pwYxm/108VdTazG8eoFIDR+v6qubq2ma1sr6TvnX1f/wDfNeMY6rYFN40/TNu2cN4DTghack25f8wxc0Lkvd0gAnWRgX6CK+g0JoDQDHWXgouHb+0MHaJyB7ZGY9RASQCcZ2Gz49lcHAdB1BrbHUr6HIACyXOn5F3wGZt38fo7P+dsRQUItzz8hrpErlBmoBNUXBF9wrlAAfslkrrIN1/94p8r/VHOzetcgACql8K8hh3nop9jeZXuOfdd5G/waBEBQYmDX2D5k+4jtX/iaYMEAbAIsSWMEKFEx8EWABrCkSyNAiYqBLwI0gCVdGgFKVAx8EaABLOnSCFCiYuBrIkCD4fm/NAK0ZBwBRoCWBCyb3wEAAP//6dA8CgAAAAZJREFUAwARF3e/fA6vTQAAAABJRU5ErkJggg=="/>
+<span>Cheila Bumba</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+<button class="bg-primary-container text-on-primary-fixed font-bold px-6 py-2 rounded hover:brightness-110 transition-all primary-glow">Resume</button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col justify-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-32">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 opacity-20 pointer-events-none">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-tertiary/10 blur-[100px] rounded-full"></div>
+</div>
+<div class="max-w-4xl">
+<div class="mb-6 flex items-center gap-4">
+<span class="w-12 h-[1px] bg-primary-container"></span>
+<p class="font-label-sm text-label-sm text-primary tracking-widest">FULL-STACK DEVELOPER</p>
+</div>
+<h1 class="font-headline-xl text-[48px] md:text-headline-xl mb-8 leading-tight">
+                    Transformando <span class="text-primary-container">Lógica</span> em Experiências Digitais de Alto Impacto
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl leading-relaxed">
+                    Desenvolvimento Full-Stack focado em soluções escaláveis, código limpo e eficiência técnica. Especialista em arquiteturas modernas que impulsionam negócios.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary-fixed px-8 py-4 font-bold rounded hover:brightness-110 transition-all primary-glow text-center" href="#projects">
+                        Ver Projetos
+                    </a>
+<a class="inline-flex items-center justify-center border border-primary-container/30 text-primary-container px-8 py-4 font-bold rounded hover:bg-primary/5 transition-all text-center" href="#contact">
+                        Entrar em Contato
+                    </a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 bg-surface-container-low" id="about">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg">Sobre Mim</h2>
+<div class="flex-grow section-line"></div>
+</div>
+<div class="space-y-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
+<p>
+                                Minha jornada no desenvolvimento de software é pautada pela busca incessante da excelência técnica e pela criação de sistemas que realmente resolvem problemas complexos. Como Full-Stack Developer, vejo cada linha de código como uma oportunidade de construir algo duradouro e eficiente.
+                            </p>
+<p>
+                                Sou apaixonada pela filosofia do Clean Code e pela aplicação de padrões de projeto que garantem a escalabilidade e a manutenibilidade das aplicações. Acredito que a tecnologia deve ser uma ponte entre a lógica pura e a experiência humana gratificante.
+                            </p>
+<p>
+                                O aprendizado contínuo é o combustível da minha carreira. Estou sempre explorando novas ferramentas e metodologias no ecossistema de desenvolvimento, mantendo o foco em entregar soluções que não apenas funcionam, mas que são performáticas e seguras.
+                            </p>
+</div>
+</div>
+<div class="order-1 md:order-2 flex justify-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full opacity-50 group-hover:opacity-75 transition-opacity"></div>
+<img alt="Cheila Bumba Profile Branding" class="relative w-64 h-64 md:w-80 md:h-80 object-contain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAFhklEQVR4AeyaQYscRRTHX/UMTkc8BBERVlGjiWi8uYZlE8S4C34AP4CIK3jIB/Ab+AHEgxgF8ebBu5hlNWbDGowXUQ+uUQkRIiJCQtKTzGzl/Wd3sjM9r2e6uqp6qpNq+k13v+6q96/fVvfrN7MJxcWKQARohY8oAowALQlYNo8zMAK0JGDZPM7ACNCSgGXzOAMjQEsCls3jDIwALQlYNr8fZ6AlsvHmjQGotX6M7RTbe2zPjw9jfkeNAMjAHmJEv7J9wPY+2wX2PcPbua+NAMiU3mI7yDZcAfSN4cE8t00BuChAui34anc1BeCLApnfBF/triYD/Ll2WkLA4AFysjjEuh9gG11vKaX+GHXMaz94gAzmKFt+/SnvmNdxEwC+IMAJ4vaFriYAlGbgLxAfgjUVYJyBBrNHeoW59wEuf6UfXTqTnV5azz5+aUM/YgDs7qX7GfiuCzulMrCL+Ag2y7zcwotnskP9dnaRFL3NAtba/e7mqxu6zfumq/T8m52Bv9CtnXZ3cz9+9uOxb28+bRq8zPXOAS6v6yfbSp9VpB4fClCKjtzoZ28Ojw22lTLwsYe7axzjWbbBqpR6IunRd9A2cDj8cAoQAnco2yRSC+RmkWZgxQysFqANGt1I2+3FGcCljZtPQSAJ8LSmSw+20s/IfJEAzkwg/YOdTxFzMpxa6FN2ziVEJwAHgnboHAnwiPSVluq89s1J1SPzpVIGvriobiMmYudD4tGCP/RAc/5khWNrgBACQVQAL6H0+PkV9RcZLjYZGKEQE7EliMRaoRnayXKxAggBEEIsiCYWfQUDwEAmTpVzSLfv7Aw80jdiQ4NPiJUBeoYHDJUyMBqOmm+IlQDWAA8MpBlYKQP7hGgMsCZ4RQBnZmA0lMwXRCOANcIDg0oZGA2LzAfE0gDrhGebgYsAwu8aYjmAqC2pu05SttX6755Wr0AYjS52+9LzzygDTwsPrdBMrH3yOn7Z1t2vy9bupQDu1ZbCD9n8qqLS5R9W00uTQqw8TjLwNAXQnLB26RVHKTpctnYvBbBIiCb1f6+dWfVR0Lc0Aytl4IL+B+5butvCGAYHuQ+GuJNziYelBt/n2pJb/842tiqio1ygnUUdPHbC/kACWDkDS3Lwldvut0Ykxdo+kKSfS+3yvlIAUVsm1FkhrmvzHSh8bcV1MJJM/pzFsfMMPKoFWgGPpGc6jzGhzmrZ2r0UQOIFD17fZRGH4ee69vo7MOC5LD9LA8TgaoIo3VJOMrBreGBiBBANaoDoJQP7gAcexgDRyDNEaQZaZWBf8MCiEkA09AhRAlg5A/uEBw6VAaKxJ4jOMrBveGBgBRAduITosgauAx7Gbw0QnQCio9pSun3NM3CNtfsYQMCoao5qSycZuM7a3RlAgMdMLH7ZxhUzTZqBVhl4PyJ/8VHxB679Pib3nAJE94BICZ3g59llHO/ZdsnfhSWAxhl4r3bf3ouN6uYyNA20DZ2Ots4BQtfWyQN/EqUvk6ZP+Ph00uscL1lbOsnAqN217pwYxm/108VdTazG8eoFIDR+v6qubq2ma1sr6TvnX1f/wDfNeMY6rYFN40/TNu2cN4DTghack25f8wxc0Lkvd0gAnWRgX6CK+g0JoDQDHWXgouHb+0MHaJyB7ZGY9RASQCcZ2Gz49lcHAdB1BrbHUr6HIACyXOn5F3wGZt38fo7P+dsRQUItzz8hrpErlBmoBNUXBF9wrlAAfslkrrIN1/94p8r/VHOzetcgACql8K8hh3nop9jeZXuOfdd5G/waBEBQYmDX2D5k+4jtX/iaYMEAbAIsSWMEKFEx8EWABrCkSyNAiYqBLwI0gCVdGgFKVAx8EaABLOnSCFCiYuBrIkCD4fm/NAK0ZBwBRoCWBCyb3wEAAP//6dA8CgAAAAZJREFUAwARF3e/fA6vTQAAAABJRU5ErkJggg=="/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-32" id="skills">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-4 mb-16">
+<h2 class="font-headline-lg text-headline-lg">Especialidades</h2>
+<div class="flex-grow section-line"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Front-end -->
+<div class="glass-card p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+<h3 class="font-headline-sm text-headline-sm">Front-end</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">Angular</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">TypeScript</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">JavaScript</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">HTML5</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">CSS3</span>
+</div>
+</div>
+<!-- Back-end -->
+<div class="glass-card p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">database</span>
+<h3 class="font-headline-sm text-headline-sm">Back-end</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">Laravel</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">PHP</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">SQL</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">REST API</span>
+</div>
+</div>
+<!-- Tools -->
+<div class="glass-card p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl">build</span>
+<h3 class="font-headline-sm text-headline-sm">Tools</h3>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">Git</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">GitHub</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">Docker</span>
+<span class="skill-badge px-4 py-2 rounded font-code-md text-code-md text-on-surface">CI/CD</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-32 bg-surface-container-low" id="projects">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-4 mb-16">
+<h2 class="font-headline-lg text-headline-lg">Projetos em Destaque</h2>
+<div class="flex-grow section-line"></div>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<!-- Project 1 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sophisticated dashboard interface for a financial management SaaS, displaying glowing charts, graphs, and transaction tables in a deep dark-mode palette. The UI features cyan accents and translucent glassmorphism panels, exuding a sense of architectural precision and professional fintech aesthetics. The lighting is focused and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS9hb6TgrLDkuifmkbCH2PlGRYsnAA4d7IO8wASaenCzZTwH0JglvA9S0mMpSATLAnSc5toZw2LdhKOe0BBLv53KWkmD7V7xmuvpP4kW6kZBzbBPNNFD_l-r-5o1nJj509IIsXU0PPB_sHQXD0w0qyPQ1ynCvBgOy-VSHqFjk0qYM1YmvRQf0BgzmcYB7lNreoog2VlZUC96kw0x8KY12TgRTTIvdXDUFe6zY7Z8qV8eBC32wg74zcx5VI7jyEJRD-QUuROJnnhuQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm mb-3">SaaS de Gestão Financeira</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
+                                Solucionando a complexidade do fluxo de caixa para Pequenas e Médias Empresas (PMEs) com uma interface intuitiva e backend robusto.
+                            </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-label-sm font-label-sm px-2 py-1 bg-primary/10 text-primary rounded">Angular</span>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-primary/10 text-primary rounded">Laravel</span>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                Ver Detalhes <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="glass-card rounded-xl overflow-hidden flex flex-col group">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A visual representation of a high-performance server network and API infrastructure. Abstract lines of data and code flow through dark architectural space, illuminated by electric cyan pulses. The style is minimalist and technological, emphasizing scalability, speed, and clean backend engineering. Dark mode aesthetic with deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBqR9m04Z1-gy5vaw-MVMZIWBzP2riMrk-u1DQfMMO7xik4lFLKW9q38aUR3pDRqDLOKbUwsTnY4gYYf_Tq9LTNPMenwjynsncQzbcFbVHe8pxOriHzDeZQLcgjI7Wnr71thb5fJ2CEQ3QROf4gyHZrqFWKJIHJcs_0J-OQM66AcLuSJtBuq-x-ZgB9mCWZNMNhVdOfgF28pI6BCSHoL-IZx7EzM1ZZlLgNhwI8BLnF26sdKharK3RF9Y2lWljYajbCZ5bemJbUOA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<h3 class="font-headline-sm text-headline-sm mb-3">API de E-commerce Escalável</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-8 flex-grow">
+                                Backend de alta performance desenvolvido para suportar vendas globais simultâneas com baixa latência e integridade de dados rigorosa.
+                            </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="text-label-sm font-label-sm px-2 py-1 bg-primary/10 text-primary rounded">Laravel</span>
+<span class="text-label-sm font-label-sm px-2 py-1 bg-primary/10 text-primary rounded">SQL</span>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                                Ver Detalhes <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32" id="contact">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="glass-card rounded-2xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6">Vamos construir algo incrível juntos?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                        Estou sempre aberta a novos projetos, colaborações e desafios técnicos. Entre em contato e vamos conversar sobre sua próxima ideia.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-8">
+<a class="flex items-center gap-3 text-on-surface hover:text-primary transition-colors" href="mailto:cheila.bumba@example.com">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-code-md text-code-md">Email</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">share</span>
+<span class="font-code-md text-code-md">LinkedIn</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">code</span>
+<span class="font-code-md text-code-md">GitHub</span>
+</a>
+</div>
+<div class="mt-16">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary-fixed px-10 py-5 font-bold rounded-full hover:brightness-110 transition-all primary-glow" href="mailto:cheila.bumba@example.com">
+                            Enviar Mensagem
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop gap-8">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">
+                Cheila Bumba
+            </div>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-80">
+                2026 Cheila Bumba. 
+            </p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for smooth reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+
+        // Simple smooth scroll for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId.startsWith('#')) {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>
